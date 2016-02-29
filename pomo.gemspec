@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency('commander', '~> 4.1')
   spec.add_dependency('octokit', '~> 1.19')
-  spec.add_dependency('terminal-notifier', '~> 1.4') if Pomo::OS.mac?
-  spec.add_dependency('growl', '~> 1.0')             if Pomo::OS.mac? || Pomo::OS.windows?
-  spec.add_dependency('libnotify', '~> 0.8')         if Pomo::OS.linux?
+
+  # extension installs conditional dependencies
+  spec.extensions << 'ext/mkrf_conf.rb'
 end
